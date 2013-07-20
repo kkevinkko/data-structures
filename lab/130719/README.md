@@ -20,21 +20,29 @@ A stack data structure models a stack of papers, or plates in a restaurant, or b
 public class DepthFirstIterator implements Enumeration {
 
     private Stack fringe = new Stack ( );
-    
-        public DepthFirstIterator ( ) {
-                if (myRoot != null) {
-                            fringe.push (myRoot);
-                                    }
-                                        }
-                                        
-                                            public boolean hasMoreElements ( ) {
-                                                    return !fringe.empty ( );
-                                                        }
-                                                        
-                                                            public Object nextElement ( ) {
-                                                                    if (!hasMoreElements ( )) {
-                                                                                throw new NoSuchElementException ("tree ran out of elements");
-                                                                                        }
-                                                                                                TreeNode node = (TreeNode) fringe.pop ( );
-                                                                                                        if (node.myRight != null) {
-                                                                                                                    fringe.push (node.myRight)}}}
+
+    public DepthFirstIterator ( ) {
+        if (myRoot != null) {
+            fringe.push (myRoot);
+        }
+    }
+
+    public boolean hasMoreElements ( ) {
+        return !fringe.empty ( );
+    }
+
+    public Object nextElement ( ) {
+        if (!hasMoreElements ( )) {
+            throw new NoSuchElementException ("tree ran out of elements");
+        }
+        TreeNode node = (TreeNode) fringe.pop ( );
+        if (node.myRight != null) {
+            fringe.push (node.myRight);
+        }
+        if (node.myLeft != null) {
+            fringe.push (node.myLeft);
+        }
+        return node;
+    }
+}
+```
