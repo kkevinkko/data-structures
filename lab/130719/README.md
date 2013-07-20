@@ -15,3 +15,26 @@ A stack data structure models a stack of papers, or plates in a restaurant, or b
 + As with ArrayList Iterator, store the next element to return
     * However, it is insufficient to simply store the next pointer
     * Store all possible nodes in the **fringe**
+
+```java
+public class DepthFirstIterator implements Enumeration {
+
+    private Stack fringe = new Stack ( );
+    
+        public DepthFirstIterator ( ) {
+                if (myRoot != null) {
+                            fringe.push (myRoot);
+                                    }
+                                        }
+                                        
+                                            public boolean hasMoreElements ( ) {
+                                                    return !fringe.empty ( );
+                                                        }
+                                                        
+                                                            public Object nextElement ( ) {
+                                                                    if (!hasMoreElements ( )) {
+                                                                                throw new NoSuchElementException ("tree ran out of elements");
+                                                                                        }
+                                                                                                TreeNode node = (TreeNode) fringe.pop ( );
+                                                                                                        if (node.myRight != null) {
+                                                                                                                    fringe.push (node.myRight)}}}
