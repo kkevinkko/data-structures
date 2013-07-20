@@ -10,8 +10,8 @@ A stack data structure models a stack of papers, or plates in a restaurant, or b
 
 ##Q: How do you iterate a tree?
 + Implement java.util.Enumeration interface
-    ++ **boolean** hasMoreElements()
-    ++ **Object** nextElement()
+    * **boolean** hasMoreElements()
+    * **Object** nextElement()
 + As with ArrayList Iterator, store the next element to return
-    ++ However, it is insufficient to simply store the next pointer
-    ++ Store all possible nodes in the **fringe**
+    * However, it is insufficient to simply store the next pointer
+    * Store all possible nodes in the **fringe**
