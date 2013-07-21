@@ -142,11 +142,11 @@ public class AmoebaFamily {
 		family.addChild("Marge", "Hilary");
 		System.out.println("Here's the family:");
 		family.print();
-		/*
-		 * System.out.println (""); System.out.println ("Here it is again!");
-		 * Iterator<Amoeba> iter = family.allAmoebas ( ); while (iter.hasNext (
-		 * )) { System.out.println (iter.next ( )); }
-		 */
+		
+		System.out.println (""); System.out.println ("Here it is again!");
+		Iterator<Amoeba> iter = family.allAmoebas ( ); while (iter.hasNext (
+		)) { System.out.println (iter.next ( )); }
+		 
 	}
 
 	public class AmoebaIterator implements Iterator<Amoeba> {
@@ -160,16 +160,32 @@ public class AmoebaFamily {
 		// O(N) operations.
 
 		// You will supply the details of this class in a future lab.
+		
+		private Stack fringe = new Stack();
 
 		public AmoebaIterator() {
+			if (myRoot != null) {
+				fringe.push(myRoot);
+			}
 		}
 
 		public boolean hasNext() {
-			return false;
+			return !fringe.empty();
 		}
 
 		public Amoeba next() {
-			return null;
+			if (!hasNext()) {
+				throw new NoSuchElementException("No more elements in the tree.");
+			}
+
+			Amoeba amoeba = (Amoeba) fringe.pop();
+			
+			if (amoeba.myChildren != null) {
+				for (int i = amoeba.myChildren.size() - 1; i >= 0; i--) {
+					fringe.push(amoeba.myChildren.get(i));
+				}
+			}
+			return amoeba;
 		}
 
 		public void remove() {
