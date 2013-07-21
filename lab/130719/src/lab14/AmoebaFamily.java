@@ -161,27 +161,28 @@ public class AmoebaFamily {
 
 		// You will supply the details of this class in a future lab.
 		
-		private Stack fringe = new Stack();
+		private Queue fringe = new LinkedList();
 
 		public AmoebaIterator() {
 			if (myRoot != null) {
-				fringe.push(myRoot);
+				fringe.add(myRoot);
 			}
 		}
 
 		public boolean hasNext() {
-			return !fringe.empty();
+			return !fringe.isEmpty();
 		}
 
 		public Amoeba next() {
 			if (!hasNext()) {
 				throw new NoSuchElementException("No more elements in the tree.");
 			}
-			Amoeba amoeba = (Amoeba) fringe.pop();
+			Amoeba amoeba = (Amoeba) fringe.remove();
 			
 			if (amoeba.myChildren != null) {
-				for (int i = amoeba.myChildren.size() - 1; i >= 0; i--) {
-					fringe.push(amoeba.myChildren.get(i));
+				Iterator it = amoeba.myChildren.iterator();
+				while (it.hasNext()) {
+					fringe.add(it.next());
 				}
 			}
 			return amoeba;
