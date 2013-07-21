@@ -177,7 +177,6 @@ public class AmoebaFamily {
 			if (!hasNext()) {
 				throw new NoSuchElementException("No more elements in the tree.");
 			}
-
 			Amoeba amoeba = (Amoeba) fringe.pop();
 			
 			if (amoeba.myChildren != null) {
