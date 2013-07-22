@@ -5,8 +5,6 @@ import java.util.NoSuchElementException;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import javax.lang.model.element.NestingKind;
-
 public class BinaryTree {
 
 	private TreeNode myRoot;
@@ -96,10 +94,13 @@ public class BinaryTree {
 		t.fillSampleTree2 ( );
 		print (t, "sample tree 2");
 		t.check();
-		print (t.fibTree(5), "fibtree");
-		t.fibTree(5).print();
-		t.exprTree("((a+(5*(a+b)))+(6*5))").print();
-
+		print (fibTree(5), "fibtree");
+		fibTree(5).print();
+		t = exprTree("((a+(5*(a+b)))+(6*5))");
+		t.print();
+		t = exprTree("((a+(5*(9+1)))+(6*5))");
+		t.optimize();
+		t.print();
 	}
 
 	private static void print (BinaryTree t, String description) {
@@ -224,7 +225,7 @@ public class BinaryTree {
 	// and involves only the operations + and *.
 	private TreeNode exprTreeHelper (String expr) {
 	    if (expr.charAt (0) != '(') {
-	    	return new TreeNode(expr.charAt(0));
+	    	if (Character.isLetter(expr.charAt(0))) return new TreeNode(expr.charAt(0)); else return new TreeNode(new Integer(Character.getNumericValue(expr.charAt(0))));
 	    } else {
 	        // expr is a parenthesized expression.
 	        // Strip off the beginning and ending parentheses,
@@ -246,4 +247,33 @@ public class BinaryTree {
 	        return new TreeNode(op, exprTreeHelper(opnd1), exprTreeHelper(opnd2)); // you fill this in
 	    }
 	}
+	 public void optimize ( ) {
+		 optimizeHelper(this.myRoot);
+	 }
+	 
+	 private void optimizeHelper(TreeNode root) {
+		 if (root.myLeft != null) {
+			 optimizeHelper(root.myLeft);
+		 }
+		 if (root.myRight != null) {
+			 optimizeHelper(root.myRight);
+		 }
+		 if (root.myItem instanceof String) {
+			 String op = (String) root.myItem;
+			 if (root.myLeft.myItem instanceof Integer && root.myRight.myItem instanceof Integer) {
+				 Integer left = (Integer) root.myLeft.myItem;
+				 Integer right = (Integer) root.myRight.myItem;
+	
+				 if (op.charAt(0) == '+') {
+					 root.myItem = new Integer(left + right);
+				 } else {
+					 root.myItem = new Integer(left * right);
+				 }
+				 root.myLeft = null;
+				 root.myRight = null;
+				 return;
+			 }
+		 }
+
+	 }
 }
