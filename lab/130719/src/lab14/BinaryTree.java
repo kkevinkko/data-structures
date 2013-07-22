@@ -1,4 +1,5 @@
 package lab14;
+import java.util.ArrayList;
 
 public class BinaryTree {
 
@@ -79,6 +80,23 @@ public class BinaryTree {
 		t.printInorder ( );
 		System.out.println ( );
 	}
+	
+	private ArrayList alreadySeen;
+	
+	public boolean isOK() {
+		alreadySeen = new ArrayList();
+		try {
+			check(myRoot);
+			return true;
+		} catch (IllegalStateException e) {
+			return false;
+		}
+	}
+	
+	private void check(TreeNode t) throws IllegalStateException {
+		
+	}
+	
 
 	private static class TreeNode {
 		

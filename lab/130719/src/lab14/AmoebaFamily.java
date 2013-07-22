@@ -43,34 +43,61 @@ public class AmoebaFamily {
 	// Makes all Amoeba names only lower case letters.
 	public void makeNamesLowercase() {
 		// Your goal is to make this as similar as possible to addChild
+		if (myRoot != null) {
+			AmoebaFamily.makeNamesLowercaseHelper(myRoot);
+		}
 	}
 
 	// Static helper method for makeNamesLowercase
 	public static void makeNamesLowercaseHelper(Amoeba currentAmoeba) {
 		// Your goal is to make this as similar as possible to addChildHelper
+		currentAmoeba.myName.toLowerCase();
+		Iterator<Amoeba> iter = currentAmoeba.myChildren.iterator();
+		while (iter.hasNext()) {
+			makeNamesLowercaseHelper(iter.next());
+		}
 	}
 
 	// Replaces the name of an amoeba named currentName with the name newName.
 	// Precondition: the amoeba family contains an amoeba named currentName.
 	public void replaceName(String currentName, String newName) {
 		// Your goal is to make this as similar as possible to addChild
+		if (myRoot != null) {
+			AmoebaFamily.replaceNameHelper(currentName, newName, myRoot);
+		}
 	}
 
 	// Static helper method for replaceName
 	public static void replaceNameHelper(String currentName, String newName,
 			Amoeba currentAmoeba) {
 		// Your goal is to make this as similar as possible to addChildHelper
+		if (currentAmoeba.myName.equals(currentName)) {
+			currentAmoeba.myName = newName;
+		} else {
+			Iterator<Amoeba> iter = currentAmoeba.myChildren.iterator();
+			while (iter.hasNext()) {
+				replaceNameHelper(currentName, newName, iter.next());
+			}
+		}
 	}
 
 	// Print the names of all amoebas in the family.
 	// later you will write print() that has more interesting formatting
 	public void printFlat() {
 		// Your goal is to make this as similar as possible to addChild
+		if (myRoot != null) {
+			AmoebaFamily.printFlatHelper(myRoot);
+		}
 	}
 
 	// Static helper method for printFlat
 	public static void printFlatHelper(Amoeba currentAmoeba) {
 		// Your goal is to make this as similar as possible to addChildHelper
+		System.out.print(currentAmoeba.myName + " ");
+		Iterator<Amoeba> iter = currentAmoeba.myChildren.iterator();
+		while (iter.hasNext()) {
+			printFlatHelper(iter.next());
+		}
 	}
 
 	// Print the names of all amoebas in the family.
@@ -81,6 +108,18 @@ public class AmoebaFamily {
 	// Amos McCoy, mom/dad, me, Mike, Bart, Lisa, Homer, Marge,
 	// Bill, Hilary, Fred, Wilma
 	public void print() {
+		if (myRoot != null) {
+			AmoebaFamily.printHelper(myRoot, "");
+		}
+	}
+	
+	public static void printHelper(Amoeba currentAmoeba, String indentLevel) {
+		System.out.println(indentLevel + currentAmoeba.myName);
+		Iterator<Amoeba> iter = currentAmoeba.myChildren.iterator();
+		indentLevel += "    ";
+		while (iter.hasNext()) {
+			printHelper(iter.next(), indentLevel);
+		}
 	}
 
 	// returns the length of the longest name in the Amoeba Family
@@ -111,6 +150,9 @@ public class AmoebaFamily {
 	public String longestName() {
 		// your goal is to make this look as similar as possible to
 		// longestNameLength
+		if (myRoot != null) {
+			return AmoebaFamily.longestName(myRoot);
+		}
 		return "";
 	}
 
@@ -118,7 +160,30 @@ public class AmoebaFamily {
 	public static String longestName(Amoeba currentAmoeba) {
 		// your goal is to make this look as similar as possible to
 		// longestNameLengthHelper
-		return "";
+		String longestAmoebaName = currentAmoeba.myName;
+		Iterator<Amoeba> iter = currentAmoeba.myChildren.iterator();
+		while (iter.hasNext()) {
+			String childMaxLengthSeen = AmoebaFamily.longestName(iter.next());
+			if (childMaxLengthSeen.length() > longestAmoebaName.length()) {
+				longestAmoebaName = childMaxLengthSeen;
+			}
+		}
+		return longestAmoebaName;
+	}
+	
+	public void size() {
+		if (myRoot != null) {
+			AmoebaFamily.sizeHelper(myRoot);
+		}
+		return;
+	}
+	
+	public static void sizeHelper(Amoeba currentAmoeba) {
+		Iterator<Amoeba> iter = currentAmoeba.myChildren.iterator();
+		while (iter.hasNext()) {
+			sizeHelper(iter.next());
+		
+		}
 	}
 
 	// Return an iterator of the amoeba family.
