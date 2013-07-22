@@ -5,6 +5,8 @@ import java.util.NoSuchElementException;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import javax.lang.model.element.NestingKind;
+
 public class BinaryTree {
 
 	private TreeNode myRoot;
@@ -96,6 +98,8 @@ public class BinaryTree {
 		t.check();
 		print (t.fibTree(5), "fibtree");
 		t.fibTree(5).print();
+		t.exprTree("((a+(5*(a+b)))+(6*5))").print();
+
 	}
 
 	private static void print (BinaryTree t, String description) {
@@ -209,5 +213,37 @@ public class BinaryTree {
 			// not used
 		}
 
+	}
+	public static BinaryTree exprTree (String s) {
+	    BinaryTree result = new BinaryTree ( );
+	    result.myRoot = result.exprTreeHelper (s);
+	    return result;
+	}
+	// Return the tree corresponding to the given arithmetic expression.
+	// The expression is legal, fully parenthesized, contains no blanks, 
+	// and involves only the operations + and *.
+	private TreeNode exprTreeHelper (String expr) {
+	    if (expr.charAt (0) != '(') {
+	    	return new TreeNode(expr.charAt(0));
+	    } else {
+	        // expr is a parenthesized expression.
+	        // Strip off the beginning and ending parentheses,
+	        // find the main operator (an occurrence of + or * not nested
+	        // in parentheses, and construct the two subtrees.
+	        int nesting = 0;
+	        int opPos = 0;
+	        for (int k=1; k<expr.length()-1; k++) {
+	        	if (expr.charAt(k) == '(') nesting++; else if (expr.charAt(k) == ')') nesting--; else if (nesting == 0 && (expr.charAt(k) == '+' || expr.charAt(k) == '*')) opPos = k; // you supply the missing code
+	        }
+	        String opnd1 = expr.substring (1, opPos);
+	        String opnd2 = expr.substring (opPos+1, expr.length()-1);
+	        String op = expr.substring (opPos, opPos+1);
+	        System.out.println ("expression = " + expr);
+	        System.out.println ("operand 1  = " + opnd1);
+	        System.out.println ("operator   = " + op);
+	        System.out.println ("operand 2  = " + opnd2);
+	        System.out.println ( );
+	        return new TreeNode(op, exprTreeHelper(opnd1), exprTreeHelper(opnd2)); // you fill this in
+	    }
 	}
 }
