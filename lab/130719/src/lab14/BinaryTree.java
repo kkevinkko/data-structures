@@ -43,7 +43,7 @@ public class BinaryTree {
 		return new TreeNode(current1.intValue() + current2.intValue(), fibTreeHelper(n-1), fibTreeHelper(n-2));
 	}
 
-	private static void printPreorder (TreeNode t) {
+	protected static void printPreorder (TreeNode t) {
 		if (t != null) {
 			System.out.print (t.myItem + " ");
 			printPreorder (t.myLeft);
@@ -59,7 +59,7 @@ public class BinaryTree {
 		System.out.println ( );
 	}
 
-	private static void printInorder (TreeNode t) {
+	protected static void printInorder (TreeNode t) {
 		if (t != null) {
 			printInorder (t.myLeft);
 			System.out.print (t.myItem + " ");
@@ -103,7 +103,7 @@ public class BinaryTree {
 		t.print();
 	}
 
-	private static void print (BinaryTree t, String description) {
+	protected static void print (BinaryTree t, String description) {
 		System.out.println (description + " in preorder");
 		t.printPreorder ( );
 		System.out.println (description + " in inorder");
@@ -117,27 +117,25 @@ public class BinaryTree {
 		}
 	}
 	
-	private static final String indent1 = "    ";
+	protected static final String indent1 = "    ";
 	
-	private static void printHelper(TreeNode root, int indent) {
+	protected static void printHelper(TreeNode root, int indent) {
 		if (root != null) printHelper(root.myRight, indent + 1); else return;
 		println(root.myItem, indent);
 		if (root != null) printHelper(root.myLeft, indent + 1);
 	}
 	
-	private static void println(Object obj, int indent) {
+	protected static void println(Object obj, int indent) {
 		for (int k = 0; k < indent; k++) {
 			System.out.print(indent1);
 		}
 		System.out.println(obj);
 	}
 	
-	
-	
-	private ArrayList alreadySeen;
+	protected ArrayList<TreeNode> alreadySeen;
 	
 	public boolean check() {
-		alreadySeen = new ArrayList();
+		alreadySeen = new ArrayList<TreeNode>();
 		try {
 			isOK(myRoot);
 			return true;
@@ -146,7 +144,7 @@ public class BinaryTree {
 		}
 	}
 	
-	private void isOK(TreeNode t) throws IllegalStateException {
+	protected void isOK(TreeNode t) throws IllegalStateException {
 		Iterator<TreeNode> it = new TreeIterator();
 		while (it.hasNext()) {
 			TreeNode current = it.next();
@@ -159,7 +157,7 @@ public class BinaryTree {
 	}
 	
 
-	private static class TreeNode {
+	protected static class TreeNode {
 		
 		public Object myItem;
 		public TreeNode myLeft;
@@ -187,7 +185,7 @@ public class BinaryTree {
 			}
 		}
 		
-		private Queue fringe = new LinkedList();
+		private Queue<TreeNode> fringe = new LinkedList<TreeNode>();
 		
 		public boolean hasNext() {
 			return !fringe.isEmpty();
@@ -223,7 +221,7 @@ public class BinaryTree {
 	// Return the tree corresponding to the given arithmetic expression.
 	// The expression is legal, fully parenthesized, contains no blanks, 
 	// and involves only the operations + and *.
-	private TreeNode exprTreeHelper (String expr) {
+	protected TreeNode exprTreeHelper (String expr) {
 	    if (expr.charAt (0) != '(') {
 	    	if (Character.isLetter(expr.charAt(0))) return new TreeNode(expr.charAt(0)); else return new TreeNode(new Integer(Character.getNumericValue(expr.charAt(0))));
 	    } else {
@@ -259,8 +257,8 @@ public class BinaryTree {
 			 optimizeHelper(root.myRight);
 		 }
 		 if (root.myItem instanceof String) {
-			 String op = (String) root.myItem;
 			 if (root.myLeft.myItem instanceof Integer && root.myRight.myItem instanceof Integer) {
+				 String op = (String) root.myItem;
 				 Integer left = (Integer) root.myLeft.myItem;
 				 Integer right = (Integer) root.myRight.myItem;
 	
