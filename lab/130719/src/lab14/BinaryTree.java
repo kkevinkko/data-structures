@@ -7,7 +7,7 @@ import java.util.Queue;
 
 public class BinaryTree {
 
-	private TreeNode myRoot;
+	protected TreeNode myRoot;
 	
 	public BinaryTree ( ) {
 		myRoot = null;
