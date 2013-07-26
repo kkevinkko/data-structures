@@ -1,7 +1,6 @@
 lab1
 ===
 * Nothing much in this lab.
-Main Points:
 * Learn to use the debugger: Different ways of stepping through execution
 * Breaking down System.out.println()
 Everything on the left of the dot is a class/object.
