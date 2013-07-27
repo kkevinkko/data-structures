@@ -42,3 +42,17 @@ the ```throws``` keyword in their header.
 contain all the logic that checks invariant maintenance.
 * It should be called whenever you alter the state of the object. That
 is, checking if the class invariants are maintained.
+
+## Where to place consistency checkers?
+* I now believe it should be placed in the JUnit tests, and not
+in the production code.
+    * Write a test to set up a mock situation, and call the isOK()
+    method there
+    * That way, you won't get isOK() calling each time during
+    production
+* The only time when you should place it in production code is
+when the consistency checker doesn't make much of a performance
+hit.
+* Or put a lightweight isOK method version in the production code. Don't
+include too many checks there. Or try to simplify to just a single
+invariant to check.
