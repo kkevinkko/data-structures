@@ -16,6 +16,7 @@ data structure) through a Hash function.
 * Hash functions must be **fast to compute**.
 
 # Memoization with Hash Tables
+* Pretty cool. See your Fibonacci code.
 
 # Lab Exercises
 ## Activity 1: Hashing Tic-Tac-Toe Boards
@@ -34,3 +35,7 @@ except change X's to 1, O's to 2, -'s to 0.
     did an Integer.parse on it. Lol.
     * This results in a slower Hash. By right, the Base 3 hash is
     supposed to perform faster than the String one.
+
+## Activity 2: Memoization with Hash Tables for Fibonacci
+* Main problem was setting the variable to static, so that fib call
+can keep track of class's map
