@@ -5,6 +5,16 @@ lab19
 * Memoisation
 * Binary Search
 
+# Hash Codes
+Hash codes refer to the result of running the elements in your
+data structure through a Hash function.
+
+## Properties of Good Hash Codes
+* All objects that are equal (note: not identical) *should* have the
+**same** Hash Code.
+* Hash code values should **spread evenly** over all integers.
+* Hash functions must be fast to compute.
+
 # Lab Exercises
 ## Activity 1: Hashing Tic-Tac-Toe Boards
 * Basically, we have to *write* and *time* 2 Hash Functions that takes in
@@ -20,3 +30,5 @@ except change X's to 1, O's to 2, -'s to 0.
     * Function takes about 12x seconds to hash
     * I did a character replace using the map above, and then just
     did an Integer.parse on it. Lol.
+    * This results in a slower Hash. By right, the Base 3 hash is
+    supposed to perform faster than the String one.
