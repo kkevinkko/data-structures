@@ -95,3 +95,11 @@ for (int i = 0; i < args.length; i++) {
     System.out.println(args[i])
 }
 ```
+
+## When to use ```final```
+* ```final``` is basically similar to PHP's constants.
+* Examples: ```args.length``` or any array's length attribute
+is declared as final. It will be the size of that array, and that's
+that. You should not be able to change it. It should be declared
+a constant.
+* So it probably looks like this ```public final length``` in array's class.
