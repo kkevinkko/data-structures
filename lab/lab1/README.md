@@ -55,4 +55,10 @@ don't need to declare the type, you just go straight into assignment.
 Hence, the simple assignment in the constructor without declaration
 in Python's OOP.
 
+* Other differences
 
+Feature | Java | Python
+--- | --- | ---
+Constructor | is a method with name of the class. | is the __init__ magic method
+Referencing self | uses the *this* keyword | assign any keyword you want. *self* by convention
+Inheritance | Use *extends* keyword | Takes in the parent class as argument in class definition
