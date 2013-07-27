@@ -92,25 +92,28 @@ environment extension)
 
 Suppose you've just instantiated an object that has static variables/methods.
 
-* You first extend the global environment by creating an object for
-**the class itself**. (Class Object)
+* When ```main``` is run, extend the global environment by creating 
+object for all classes, **the class itself**. This probably holds
+function bodies of the methods, and variables together with the
+static variables.
 * Then you *extend the environment further* when you create an instance of the
 object itself.
 
-* The static variables/methods are probably stored in the "Class Object"
+* ```static``` variables/methods are probably stored in the "Class Object"
 * The non-static variables/methods are stored in the instance itself.
 
 * So use ```static``` when you need every instance object to
 share a common class' variable or method.
 
-* Implications: There is no ```this``` in a ```static``` method.
+Implications: There is no ```this``` in a ```static``` method.
+
 * You use ```static``` methods when a method doesn't depend
 on any particular instance of the class, but still belongs to the
 class as a whole.
 
 ## Lifetime of variables
 
-* Local variables die when method call is done.
-* Instance variables die when object is removed from heap.
-* Static variables die when program ends. (since the Class is
+* **Local variables** die when method call is done.
+* **Instance variables** die when object is removed from heap.
+* **Static variables** die when program ends. (since the Class is
 there throughout the entire program execution)
