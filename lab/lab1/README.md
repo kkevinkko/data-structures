@@ -30,8 +30,8 @@ public class Ant {
     Place exit;
 
     public Ant(String name, Place exit = null) {
-        this.name = name
-        this.exit = exit
+        this.name = name;
+        this.exit = exit;
     }
 }
 ```
@@ -62,3 +62,19 @@ Feature | Java | Python
 Constructor | is a method with name of the class. | is the ```__init__``` magic method
 Referencing self | Implicitly passes the ```this``` keyword in method definition | need to explicitly pass ```self``` (or anything else you like) to all methods definitions
 Inheritance | Use ```extends``` keyword | Takes in the parent class as argument in class definition
+
+## When to use ```this```
+
+* Use it when you need to resolve conflicts between local variable
+and/or parameter names.
+
+Suppose Human class has 2 attributes, ```age``` and ```name```
+
+```java
+public void change(int age) {
+    String name = "Chang";
+
+    this.name = name; // to resolve conflict in local variable name
+    this.age = age; // to resolve conflict in parameter name
+}
+```
