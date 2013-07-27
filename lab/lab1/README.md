@@ -60,5 +60,5 @@ in Python's OOP.
 Feature | Java | Python
 --- | --- | ---
 Constructor | is a method with name of the class. | is the ```__init__``` magic method
-Referencing self | Implicitly passes the ```this``` keyword in method calls | need to explicitly declare passing ```self``` (or anything else you like) to all methods
+Referencing self | Implicitly passes the ```this``` keyword in method definition | need to explicitly pass ```self``` (or anything else you like) to all methods definitions
 Inheritance | Use ```extends``` keyword | Takes in the parent class as argument in class definition
