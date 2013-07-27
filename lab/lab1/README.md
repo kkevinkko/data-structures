@@ -111,6 +111,9 @@ Implications: There is no ```this``` in a ```static``` method.
 on any particular instance of the class, but still belongs to the
 class as a whole.
 
+* The shape of a ```static``` method call is ```Math.sqrt(x)```,
+where *Class*.staticMethod(args)
+
 ## Lifetime of variables
 
 * **Local variables** die when method call is done.
