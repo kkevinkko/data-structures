@@ -44,3 +44,7 @@ it is a stack, etc.
 you can pass in your object since it is technically a stack.
 * http://stackoverflow.com/questions/90851/is-creating-interfacesfor-almost-every-class-justified-or-are-interfaces-overus?rq=1
 * See iCanHazCheeseBurgerz example
+
+# Callbacks
+* Just the idea that a program calls a function, which will callback
+another function.
