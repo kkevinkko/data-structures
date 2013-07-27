@@ -1,6 +1,18 @@
 import java.io.*;
 
 public class TTTboard {
+	/*
+	 * Tasks:
+	 * 1. Add methods to the TTTBoard class that test two ways to hash Tic-tac-toe boards.
+	 * 
+	 * a. In one, you should convert the board to a String and then use the String 
+	 * hashCode function. 
+	 * 
+	 * b. In the other, you should interpret the Tic-tac-toe board as a nine-digit base 3
+	 * numeral and return the corresponding integer as the hash value. Compare the 
+	 * performance of these two implementations (There is a hint about this one on 
+	 * the next page.)
+	 */
 
     private char[ ][ ] myBoard;
 

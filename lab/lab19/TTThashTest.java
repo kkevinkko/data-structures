@@ -2,6 +2,11 @@ import java.io.*;
 import java.util.*;
 
 public class TTThashTest {
+	/*
+	 * Given Description:
+	 * The code in TTThashTest.java stores all possible Tic-tac-toe boards into
+	 * a java.util.HashSet object.  
+	 */
 
     public static void main (String [ ] args) {
         HashSet<TTTboard> table = new HashSet<TTTboard> ( );
