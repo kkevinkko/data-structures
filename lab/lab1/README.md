@@ -82,3 +82,20 @@ public void change(int age) {
 * Obviously, this means that local variable names and
 formal parameter bindings gets looked up first before
 instance variable names. (Think environment diagram)
+
+## When to use ```static```
+
+* Think environment diagrams:
+
+* (This might not be entirely correct, but it helps to think about
+environment extension)
+
+Suppose you've just instantiated an object that has static variables.
+
+* You first extend the global environment by creating an object for
+**the class itself**. (Class Object)
+* Then you *extend the environment further* when you create an instance of the
+object itself.
+
+* The static variables are probably stored in the "Class Object"
+* The non-static variables are stored in the instance itself.
