@@ -60,7 +60,32 @@ public class TTTboard {
     
     public int hashCode ( ) {
 	// YOU REPLACE THE BODY OF THIS METHOD.
-	return 0;
+    	myBoard.toString();
+		return 0;
+    }
+
+    public String toString() {
+    	/*
+    	 * Main difficulties encountered:
+    	 * 1. STRINGS ARE IMMUTABLE!!
+    	 * I was stuck because I was wondering why s.concat() didn't print out
+    	 * anything. It was because it was returning a string, and not mutating String s
+    	 * itself.
+    	 * To get around this, you need to reassign the result of s.concat() to s again.
+    	 * This is how I got to build up the immutable string.
+    	 */
+    	String s = new String();
+        for (int r=0; r<3; r++) {
+            for (int c=0; c<3; c++) {
+				if (cell (r, c) == BLANK) {
+				    s = s.concat("-");
+				} else {
+					//System.out.println(cell(r, c));
+				    s = s.concat(Character.toString(cell(r, c)));
+				}
+            }
+        }
+		return s;
     }
     
     private static final char BLANK = ' ';
@@ -169,5 +194,6 @@ public class TTTboard {
 	board.makeMove (true, 2, 0);
 	board.print ( );
 	// end of x wins
+	System.out.println(board.toString());
     }
 }
