@@ -23,3 +23,16 @@ have well-tested code, you want them to inherit all their goodness.
 * And especially if there is a large open source community working on that
 library, you automatically inherit any changes that they make...
 your code gets upgraded **without making any changes to your current code**!
+
+# Interfaces
+## What good is an ```interface``` if it's just a bunch of method signatures?
+* Indeed, it would be useless in a language like Python.
+* In Java, ```interface``` is a language construct.
+* By explicitly saying that your class ```implements``` an interface,
+you can take advantage of the compiler checking that promise. It ensures that
+your class **promises** whatever that it says it will be (an interface of).
+* If you promise that your object will be able to iterate, then Java
+compiler will ensure that you do implement all the methods that make an
+object an iterable object.
+* Java is able to formally check this interface adherence. Many
+languages don't have ways to enforce this interface idea formally.
