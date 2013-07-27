@@ -16,6 +16,7 @@ between classes at the start!
 * It also makes making new objects a lot easier; just write the delta
 methods or instance variables that differs from an existing object. This
 **code reuse** is possible mainly due to **overriding**.
+
 ## Good Use Case
 * The kind of things you want to inherit from is like libraries. Libraries
 have well-tested code, you want them to inherit all their goodness.
