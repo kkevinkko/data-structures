@@ -60,8 +60,9 @@ public class TTTboard {
     
     public int hashCode ( ) {
 	// YOU REPLACE THE BODY OF THIS METHOD.
-    	myBoard.toString();
-		return 0;
+    	// 1. Hashes the String version of the board.
+    	//return myBoard.toString().hashCode();
+    	return this.toBase3();
     }
 
     public String toString() {
@@ -80,12 +81,19 @@ public class TTTboard {
 				if (cell (r, c) == BLANK) {
 				    s = s.concat("-");
 				} else {
-					//System.out.println(cell(r, c));
 				    s = s.concat(Character.toString(cell(r, c)));
 				}
             }
         }
 		return s;
+    }
+    
+    public int toBase3() {
+    	String s = this.toString();
+    	s = s.replace('-', '0');
+    	s = s.replace('X', '1');
+    	s = s.replace('O', '2');
+    	return Integer.parseInt(s);
     }
     
     private static final char BLANK = ' ';
@@ -194,6 +202,7 @@ public class TTTboard {
 	board.makeMove (true, 2, 0);
 	board.print ( );
 	// end of x wins
-	System.out.println(board.toString());
+	//System.out.println(board.toString());
+	System.out.println(board.toBase3());
     }
 }
