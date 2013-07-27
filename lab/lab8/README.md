@@ -11,15 +11,16 @@ we're passing control out of our program.
 For instance:
     * Getting user input (I/O)
     * Reading from a File (I/O)
-    * Reading from the internet URL
-    * Getting network connections
+    * Reading from an external source, e.g.URL
+    * Getting network connections from operating system
 
-So you shouldn't have try-catch blocks handling your own programs..
+So you shouldn't have try-catch blocks handling code within your control..
 That would mean your code is buggy and you need to fix it yourself!
 Exception catching should only catch stuff that got out of your
 control.
 
-* But catching the error is one thing, the other thing you should
+## Exception Handling
+* Catching the error is one thing, the other thing you should
 do is to handle it.
 * A weak way (though better than doing nothing or crashing) is to
 handle the error.
@@ -29,6 +30,9 @@ handle the error.
     exception types and react accordingly.
     * The point of the catch block is to try to recover from the
     error
+
+## Exception Throwing
 * To catch the error, someone must be throwing it.
 * It's one of the methods in the try block that needs to implement
 the ```throws``` keyword in their header.
+* ```throw``` exception whenever it meets some criteria.
