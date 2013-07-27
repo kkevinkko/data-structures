@@ -59,6 +59,6 @@ in Python's OOP.
 
 Feature | Java | Python
 --- | --- | ---
-Constructor | is a method with name of the class. | is the __init__ magic method
-Referencing self | uses the *this* keyword | assign any keyword you want. *self* by convention
-Inheritance | Use *extends* keyword | Takes in the parent class as argument in class definition
+Constructor | is a method with name of the class. | is the ```python __init__``` magic method
+Referencing self | uses the ```java this``` keyword | assign any keyword you want. ```python self``` by convention
+Inheritance | Use ```java extends``` keyword | Takes in the parent class as argument in class definition

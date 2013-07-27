@@ -12,7 +12,7 @@ public class MyStringClass implements Comparable {
 	public int hashCodeA ( ) { // to be used in experiment 4
 		return myString.charAt (0);
 	}
-	public int hashCodeB ( ) { // to be used in experiment 5
+	public int hashCode ( ) { // to be used in experiment 5
 		int sum = 0;
 		for (int k = 0; k < myString.length ( ); k++) {
 			sum += myString.charAt (k);
@@ -53,7 +53,7 @@ public class MyStringClass implements Comparable {
 				System.err.println("Can't open file: " + args[0]);
 				System.exit(1);
 			}
-			TreeMap<MyStringClass, Integer> table = new TreeMap<MyStringClass, Integer>();
+			HashMap<MyStringClass, Integer> table = new HashMap<MyStringClass, Integer>();
 			long startTime = System.currentTimeMillis();
 			String s = strings.readLine();
 			for (int k = 0; (s != null) && (k < i); s = strings.readLine(), k++) {
