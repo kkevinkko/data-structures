@@ -24,14 +24,35 @@ subexpressions evaluated from left to right)
 * Notice that in Java, we declare the variables at the top of
 the class definition. e.g. String s; 
 
+```java
+public class Ant {
+    String name;
+    Place exit;
+
+    public Ant(String name, Place exit = null) {
+        this.name = name
+        this.exit = exit
+    }
+}
+```
+
 But in python, we jump straight into the constructor and put all
 instance variables *assignments* there.
 
-The reason for this is that Java is statically-typed, so all
+```python
+class Ant(Object):
+    def __init__(self, name, exit=None):
+        self.name = name
+        self.exit = exit
+```
+
+The reason for this is that Java is a statically-typed language, so all
 variables must have their type declared.
 
-This defers from Python being dynamically-typed language,so you don't
-need to declare the type, you just go straight into assignment.
+This defers from Python being dynamically-typed language, meaning you
+don't need to declare the type, you just go straight into assignment.
 
 Hence, the simple assignment in the constructor without declaration
 in Python's OOP.
+
+
