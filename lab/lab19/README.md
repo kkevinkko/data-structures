@@ -6,14 +6,14 @@ lab19
 * Binary Search
 
 # Hash Codes
-Hash codes refer to the result of running the elements in your
-data structure through a Hash function.
+Hash codes refer to the value returned from running the elements (of your
+data structure) through a Hash function.
 
 ## Properties of Good Hash Codes
-* All objects that are equal (note: not identical) *should* have the
+* All objects that are **equal** (note: not *identical*) should have the
 **same** Hash Code.
 * Hash code values should **spread evenly** over all integers.
-* Hash functions must be fast to compute.
+* Hash functions must be **fast to compute**.
 
 # Lab Exercises
 ## Activity 1: Hashing Tic-Tac-Toe Boards
