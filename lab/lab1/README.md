@@ -66,7 +66,7 @@ Inheritance | Use ```extends``` keyword | Takes in the parent class as argument 
 ## When to use ```this```
 
 * Use it when you need to resolve conflicts between local variable
-and/or parameter names.
+and/or parameter names, and the object's attribute names.
 
 Suppose Human class has 2 attributes, ```age``` and ```name```
 
