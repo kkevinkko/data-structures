@@ -33,6 +33,7 @@ one of the list variants.
 * Notice Java doesn't require you to declare the size of the
 array when you declare the variable type.
 * instead, you declare the size during instantiation.
+
 ```java
 placeArray = new Place[13];
 ```
