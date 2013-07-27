@@ -75,3 +75,23 @@ placeArray[1] = new Place(ant, someExit);
 
 * In Python, you can access items from the back via negative indices.
 * Don't try to do that in Java. Will result in exception.
+
+## Common Code
+* Since instantiation is decoupled from declaration, you'll find
+that although you can declare multiple statements with one line
+```placeArray = new Place[1000000]```, you can't do the same
+for assigments.
+* So use a loop construct to quickly initialise all 1000000 of them.
+
+```java
+for (int i = 0; i < placeArray.length; i++) {
+    placeArray[i] = new Place();
+}
+```
+
+### To read arguments Array from main(String[] args)
+```java
+for (int i = 0; i < args.length; i++) {
+    System.out.println(args[i])
+}
+```
