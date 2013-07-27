@@ -5,7 +5,7 @@ lab19
 * Memoisation
 * Binary Search
 
-# Hash Codes
+# Hash Functions
 Hash codes refer to the value returned from running the elements (of your
 data structure) through a Hash function.
 
@@ -14,6 +14,8 @@ data structure) through a Hash function.
 **same** Hash Code.
 * Hash code values should **spread evenly** over all integers.
 * Hash functions must be **fast to compute**.
+
+# Memoization with Hash Tables
 
 # Lab Exercises
 ## Activity 1: Hashing Tic-Tac-Toe Boards
