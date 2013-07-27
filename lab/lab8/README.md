@@ -36,3 +36,9 @@ handle the error.
 * It's one of the methods in the try block that needs to implement
 the ```throws``` keyword in their header.
 * ```throw``` exception whenever it meets some criteria.
+
+# Coupling Exceptions with Consistency Checker methods
+* Consistency checker methods should throw exceptions. It should
+contain all the logic that checks invariant maintenance.
+* It should be called whenever you alter the state of the object. That
+is, checking if the class invariants are maintained.
