@@ -65,8 +65,8 @@ Inheritance | Use ```extends``` keyword | Takes in the parent class as argument 
 
 ## When to use ```this```
 
-* Use it when you need to resolve conflicts between local variable
-and/or parameter names, and the object's attribute names.
+* Use it when you need to resolve conflicts between **local variable
+and/or parameter names**, and the object's **attribute names**.
 
 Suppose Human class has 2 attributes, ```age``` and ```name```
 
@@ -78,3 +78,7 @@ public void change(int age) {
     this.age = age; // to resolve conflict in parameter name
 }
 ```
+
+* Obviously, this means that local variable names and
+formal parameter bindings gets looked up first before
+instance variable names. (Think environment diagram)
