@@ -32,6 +32,17 @@ Objectives of this Project:
 Similar to:
     * Recursive Lists (Scheme)
 
+```java
+
+// to run to the end of the list.
+for (p = myHead; p != null, p.myRest != null, p.myRest.myRest != null; p = p.myFirst)
+
+```
+
+When you remove things, remember to decrement the counter because
+when you remove, the items will all move down, by one. Then the
+for loop will do a ++, so you'd want to decrement to move back.
+
 ## Stacks (ADT/Restriced DS)
 * Inorder Iteration (Depth-first)
     * init: Find leftmost descendant of root, then push everything on the way.
@@ -61,7 +72,7 @@ find them fastest.
     * remove for trees is tricky.
     * Inorder-successor - Right child's Leftmost Descendent, but
     if Right child is null, take Parent
-* Null checks
+* Null checks and Return checks.
 * Advanced Operations:
 ### Binary Trees (DS)
 
@@ -89,9 +100,52 @@ private static Object processHelper(TreeNode node) {
 
 ```
 
+```java
+
+AmoebaIterator iter = new AmoebaIterator();
+while (iter.next) {
+    doSomethingWithNext();
+}
+
+```
+
 ### Binary Search Trees (DS)
 
 ## Hash Maps
+TreeMap vs. HashMap/HashSet
+HashSet only cares about keys. HashMap cares about both keys and values.
+
+* What does the key class require?
+    * for TreeMap.
+        * compareTo or some Comparable item
+    * for HashMap
+        * hashCode
+        * equal(Object obj)
+
+* Putting new things into the map, you want to put immutable
+things into map as keys.
+
+* Invariant: Every thing in the bucket has the same hashcode?
+
+* What must a good hashCode have?
+    * For keys that are equal(), they must have the same value
+        * won't get the right object if you don't
+    * hashCode values should be spread across all possible values.
+    * hashCode should be quick to compute
+
+* Timings
+    * get
+        * ignore calculating the hashCode (Constant time)
+        * finding the right bucket
+    * put
+    * contains
+
+* Know what happens when there's a collision.
+    * Chaining
+
+## Tree Maps
+Invariant:
+
 
 ## Heaps
 
@@ -99,3 +153,60 @@ private static Object processHelper(TreeNode node) {
 
 # Asymptotic Analysis
 
+
+### Isaac Question
+Write a width() method for BinaryTree that returns
+the width of the BinaryTree
+
+The width is defined as the maximal number of nodes on a 
+path from one node in the tree to another.
+
+Assume each tree node contains height (instance variable myHeight)
+Height of an empty tree is 0.
+int Math.max(int a, int b) returns whichever a or b is larger.
+
+Attempt:
+```java
+
+public int width() {
+    return widthHelper(myRoot, 1, 0);
+}
+
+public static int widthHelper(TreeNode n, int bestLengthSoFar, int currentLength) {
+    if (n == null) {
+        return 0;
+    } else {
+        currentLength += 1
+        if (currentLength >= bestLengthSoFar) {
+            bestLengthSoFar = currentLength;
+        }
+        currentLength =  BinaryTree.width(n.myLeft) + BinaryTree.width(n.myRight);
+        return Math.max(bestLengthSoFar, currentLength);
+    }
+}
+
+```
+
+Solution:
+```java
+
+public int width() {
+    return helper(myRoot);
+}
+
+public static int helper(TreeNode node) 
+    if (node == null) {
+        return 0;
+    } else if (node.myLeft == null) {
+        return Math.max(node.myHeight, BinaryTree.helper(node.myRight));
+    } else if (node.myRight == null) {
+        return Math.max(node.myHeight, BinaryTree.helper(node.myLeft));
+    } else {
+        return Math.max(1 + node.myLeft.myHeight + node.myRight.myHeight,
+                Math.max(BinaryTree.helper(node.myLeft), BinaryTree.helper(node.myRight)))
+        // This is tree recursion, you check on the current node,
+        // then do the same calculations on children.
+    }
+}
+
+```
