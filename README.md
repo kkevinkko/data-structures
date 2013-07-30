@@ -64,6 +64,7 @@ find them fastest.
 * Null checks
 * Advanced Operations:
 ### Binary Trees (DS)
+
 ```java
 
 public Object processBinaryTree() {
@@ -87,6 +88,7 @@ private static Object processHelper(TreeNode node) {
 }
 
 ```
+
 ### Binary Search Trees (DS)
 
 ## Hash Maps
