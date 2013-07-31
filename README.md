@@ -35,7 +35,7 @@ l[0]
 * In python, lists implement the len interface, which tells us the
 length of the list, ```len(l)```
 
-## Array/Array Lists
+## Array/Array Lists(Dynamic Arrays)
 * Linear
 * Basic Operations:
     * add
@@ -75,6 +75,8 @@ when you remove, the items will all move down, by one. Then the
 for loop will do a ++, so you'd want to decrement to move back.
 
 ## Stacks (ADT/Restriced DS)
+* Notice that it can essentially be just a list, with limited access.
+    * Only get and put at one end of the list.
 * Inorder Iteration (Depth-first)
     * init: Find leftmost descendant of root, then push everything on the way.
     * Why? No matter how big the tree, the leftmost is the smallest, guaranteed?
@@ -115,6 +117,8 @@ public class KnowledgableStack extends Stack {
 ```
 
 ## Queues (ADT/Restricted DS)
+* Just like a list, except restricted insertion at one end of list,
+and removal from the other, strictly.
 * Breadth-first search
     * next: Push left child, then Push right child
     * return Pop
