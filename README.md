@@ -1,11 +1,40 @@
 Data Structures and Programming Methodology
 ======
 Objectives of this Project:
-* Notes for cs61bl class
+* Notes on Data Structures and Programming Methodology
 * To practise version control workflow
 * Practise documentation with Github markdown.
 
+Why are data structures important?
+* The way your code will look like, most likely depends on
+the data structure you choose to work with.
+* The ease that you have coding will also depend on the
+data structure chosen.
+* Imagine the UNIX directories used a Linked List structure
+to keep your directories. How long would that take to retrieve
+items??
+
+# ADT's and Data Structures
+Every ADT can be implemented in either one of 2 ways:
+    * As an **array**
+    * As a **linked data structure**
+
 # Collections
+# Lists
+* Ordered
+* In python, we **construct** lists with square brackets.
+
+```python
+l = [1, 2, 3, 4]
+```
+* we **select** elements with indices.
+
+```python
+l[0]
+```
+* In python, lists implement the len interface, which tells us the
+length of the list, ```len(l)```
+
 ## Array/Array Lists
 * Linear
 * Basic Operations:
@@ -32,6 +61,8 @@ Objectives of this Project:
 Similar to:
     * Recursive Lists (Scheme)
 
+* Singly-linked Lists
+
 ```java
 
 // to run to the end of the list.
@@ -53,6 +84,36 @@ for loop will do a ++, so you'd want to decrement to move back.
 * Win conditions at the bottom, so use Depth-first search to
 find them fastest.
 
+```java
+
+public class KnowledgableStack extends Stack {
+
+    private Object second;
+
+    public KnowledgableStack {
+        super();
+        second = null;
+    }
+
+    public void push(Object obj) {
+        second = this.peek();
+        super.push(obj);
+    }
+
+    public void pop(Object obj) {
+        super.pop();
+        Object old = super.pop();
+        second = this.push();
+        super.push(old);
+    }
+
+    public E peekUnder() {
+        return second;
+    }
+}
+
+```
+
 ## Queues (ADT/Restricted DS)
 * Breadth-first search
     * next: Push left child, then Push right child
@@ -62,6 +123,9 @@ find them fastest.
 ## Sets (ADT)
 
 ## Trees (ADT)
+* Best Example: UNIX Directories
+    * Each dir folder has pointers to other dir folders.
+    * The root of the tree is called ```root```
 * Recursive
 * General Style:
     * Multi-dimensional structure => 99.99% of time gonna be Recursive.
@@ -142,6 +206,11 @@ things into map as keys.
 
 * Know what happens when there's a collision.
     * Chaining
+        * Becomes like a linked list.
+
+* Why are collisions bad?
+    * Because you'll get chaining. And that produces a Linked List.
+    And a Linked List is slow to traverse.
 
 ## Tree Maps
 Invariant:
