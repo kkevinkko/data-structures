@@ -5,6 +5,9 @@ Objectives of this Project:
 * To practise version control workflow
 * Practise documentation with Github markdown.
 
+Resources:
+* http://algs4.cs.princeton.edu/home/
+
 Why are data structures important?
 * The way your code will look like, most likely depends on
 the data structure you choose to work with.
