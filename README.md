@@ -8,6 +8,7 @@ Objectives of this Project:
 Resources:
 * http://algs4.cs.princeton.edu/home/
 * http://www.cs.usfca.edu/~galles/visualization/Algorithms.html
+* http://interactivepython.org/courselib/static/pythonds/index.html
 
 Why are data structures important?
 * The way your code will look like, most likely depends on
