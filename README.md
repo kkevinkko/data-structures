@@ -224,6 +224,35 @@ Invariant:
 
 ## Priority Queues
 
+## Graphs
+* Shows relationships between elements in the collection.
+* Terminology:
+    * Elements/Nodes are called **Vertices**
+        * e.g. People, Places, Things
+        * v1, v2, v3, etc
+    * Edges represents the relationships
+        * (v1, v2), (v2, v3), etc
+* e.g. Google Maps, Facebook friends relationships
+* Definitions:
+    * Undirected - if relationships are bi-directional
+        * (v0, v1) == (v1, v0)
+    * Directed - if relationships are one- or two-way
+        * (v0, v1) != (v1, v0)
+    * Adjacent - 2 nodes are adjacent if there's an edge between them
+    * Connected - if every vertex can reach any other vertex
+    * Set of neighbours - adjacent nodes to a node
+    * Incident with an edge - 
+    * Path - Sequence of edges connecting nodes
+    * Cycle - A path which ends where it started
+    * Connected Graph - for every pair of vertices, there is a
+    path between the 2
+* Different Representations of Graphs
+    * Adjacency Lists
+        * An Array stores the vertices, and each references a Linked
+        List where each node stores the adjacent vertices.
+    * Adjacency Matrix
+        * A 2D Boolean Array that stores all combinations of edges
+
 # Asymptotic Analysis
 
 
