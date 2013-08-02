@@ -5,6 +5,12 @@ Objectives of this Project:
 * To practise version control workflow
 * Practise documentation with Github markdown.
 
+Resources:
+* http://algs4.cs.princeton.edu/home/
+* http://www.cs.usfca.edu/~galles/visualization/Algorithms.html
+* http://interactivepython.org/courselib/static/pythonds/index.html
+* http://www.cs.cmu.edu/~adamchik/15-121/lectures/
+
 Why are data structures important?
 * The way your code will look like, most likely depends on
 the data structure you choose to work with.
