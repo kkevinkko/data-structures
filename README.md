@@ -12,8 +12,8 @@ Resources:
 * http://www.cs.cmu.edu/~adamchik/15-121/lectures/
 
 Why are data structures important?
-* The way your code will look like, most likely depends on
-the data structure you choose to work with.
+* The way your code will turn out depends largely on
+the data structure chosen.
 * The ease that you have coding will also depend on the
 data structure chosen.
 * Imagine the UNIX directories used a Linked List structure
