@@ -11,7 +11,8 @@ Resources:
 * http://interactivepython.org/courselib/static/pythonds/index.html
 * http://www.cs.cmu.edu/~adamchik/15-121/lectures/
 
-Why are data structures important?
+Why Data Structures?
+* Your choice of Data Structure puts your problem in a Framework -- Want to think about it linearly? Use some List. Branching out? Use a Tree/Graph. 
 * The way your code will turn out depends largely on
 the data structure chosen.
 * The ease that you have coding will also depend on the
