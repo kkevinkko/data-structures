@@ -1,0 +1,1 @@
+Records (also called tuples or structs) are among the simplest data structures. A record is a value that contains other values, typically in fixed number and sequence and typically indexed by names. The elements of records are usually called fields or members.
