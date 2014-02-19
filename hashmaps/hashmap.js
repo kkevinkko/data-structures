@@ -1,5 +1,13 @@
 /**
- * Objects in JS are naturally Hash Maps
+ *
+ * Suppose we have MANY objects in a list,
+ * and we want to access a particular object in O(1),
+ *
+ * Do we want to run through the entire list to find it? Nope.
+ *
+ * We can use hash map to JUMP straight to it if we find a suitable key
+ * in the object to hash into an index.
+ *
  *
  */
 
